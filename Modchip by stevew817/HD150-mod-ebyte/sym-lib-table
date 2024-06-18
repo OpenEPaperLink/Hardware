@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "eec")(type "Legacy")(uri "${KIPRJMOD}/eec.lib")(options "")(descr ""))
+  (lib (name "HD150-mod-rescue")(type "KiCad")(uri "${KIPRJMOD}/HD150-mod-rescue.kicad_sym")(options "")(descr ""))
+)
