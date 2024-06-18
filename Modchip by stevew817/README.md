@@ -20,7 +20,10 @@ KiCAD source files for the 'modchip' are provided in the `HD150-mod-ebyte` folde
 ### Component list for mod
 - LiPo battery which fits in the enclosure space, with built-in undervoltage protection. I used [these](https://www.kjell.com/no/produkter/elektro-og-verktoy/arduino/arduino-tilbehor/luxorparts-li-po-batteri-37-v-med-kontakt-1200-mah-p87924) but have no idea where they are sourced from. A Google search would indicate PKCell. Indicated dimension 63x36x4,7 mm. The same marking code can be found on [Adafruit's battery](https://www.adafruit.com/product/258).
 - Assembled PCB ([BOM](./BOM.csv))
-  - Note about the BOM: choose either a micro-USB connector or a JST-PH connector for the power input. The JST-PH footprint is also good for soldering a cable with a custom charging contact on to if desired.
+  - Notes about the BOM:
+    - Choose either a micro-USB connector or a JST-PH connector for the power input (i.e. choose either J2 or J4). The JST-PH footprint is also good for soldering a cable with a custom charging contact on to if desired.
+    - JP1 is for testing purposes only. The debug UART doesn't support input, it only prints output, so the RX signal goes unused and PA06 is exposed as a solder pad for future use.
+    - Either mount the mini-simplicity connector on J3 for flashing the chip with a Silicon Labs WSTK, or use a tag-connect Cortex cable (and a debug probe of your choice which supports EFR32BG22) on footprint J5.
   - Note about the [module](https://www.cdebyte.com/products/E104-BT53A1): can be sourced from [AliExpress in a 10-pack](https://www.aliexpress.com/item/4001276005199.html) for less than $2/pc.
 - Electrical wire
 
