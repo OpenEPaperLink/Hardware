@@ -58,4 +58,4 @@ In writing:
 ![Reassembled display](./reassembled.jpeg)
 
 ## Firmware
-The firmware is built as part of the EFR32xG22 implementation of OEPL, residing in a separate repository [(TODO: link)](#). Note that if you want the modchip to support a different display than the HD150/GDEW0583Z83, you'll need to either implement support for that yourself (and please send a PR!), or open an issue with your request (not guaranteed to be followed up on, depends on available time and access to hardware).
+The firmware is built as part of the EFR32xG22 implementation of OEPL, residing in a [separate repository](https://github.com/OpenEPaperLink/Tag_FW_EFR32xG22). Note that if you want the modchip to support a different display than the HD150/GDEW0583Z83, you'll need to either implement support for that yourself (and please send a PR!), or open an issue with your request (not guaranteed to be followed up on, depends on available time and access to hardware).
