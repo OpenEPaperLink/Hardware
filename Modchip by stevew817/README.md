@@ -4,6 +4,10 @@ License: [CERN-OHL-W-2.0](https://choosealicense.com/licenses/cern-ohl-w-2.0/)
 ## Introduction
 This is sample hardware for modding an electronic shelf label such that it supports running OpenEpaperLink (OEPL) compatible firmware. A 'brain transplant', if you will.
 
+| :warning: WARNING                                               |
+|:----------------------------------------------------------------|
+| The pinout as indicated on the v2 PCB silkscreen is not the same pinout as implemented in the firmware. See the mod isntructions section below for the correct wiring. |
+
 ## Hardware
 The modchip originated from a mod of a Pricer HD150 electronic shelf label, which is commonly available on eBay. These are nicely sized, at 5.83" diagonal and a 640x480 resolution. The display inside is a red/black/white eInk display made by a company called 'Good Display' ([GDEW0583Z83](https://www.good-display.com/product/242.html)). The shelf label is interesting as it seems to be in relatively steady supply, and inside it comes with a carrier PCB and injection-molded enclosure with space to spare for an invisible hardware mod.
 
@@ -36,7 +40,22 @@ Tools:
 ### Mod instructions for HD150
 More pictures...
 
-Cutting the original PCB traces, plus wiring and mounting the mod and the battery:
+:warning: The pinout as shown here is NOT the same as implemented in firmware. The correct wiring for the v2 PCB with v3 and above firmware is as follows:
+
+| Function | HD150 solder point | ESL modchip v2 PCB solder pad | ESL modchip v3 PCB solder pad |
+|----------|--------------------|-------------------------------|-------------------------------|
+| MOSI     | TP24               | SDIO (PA4)                    | PA4                           |
+| SCLK     | TP28               | SCLK (PB0)                    | PB0                           |
+| nCS      | TP42               | CS_M (PA0)                    | PA0                           |
+| nRST     | TP40               | BUSY (PD0)                    | PD0                           |
+| BUSY     | TP41               | RST (PB2)                     | PB2                           |
+| D/C      | TP43               | CS_S (PC1 - this is a typo on v2 silkscreen, the pad is actually connected to the MCU pin PD1) | PD1                           |
+| DSP_EN   | See image          | PA6                           | PA6                           |
+| VCC      | TP2                | VCC                           | VCC                           |
+| GND      | Any ground pad     | GND                           | GND                           |
+| (BTN)    | Button lower left  | D/C (PB1) (optional)          | PB1                           |
+
+Image as reference for cutting the correct traces and finding the relevant testpoints, does not show the above pinout!
 ![Modded ESL cut and wiring instructions](./modded_pcb_instructions.jpeg)
 
 Removing elements from the back casing to make room for the mod:
