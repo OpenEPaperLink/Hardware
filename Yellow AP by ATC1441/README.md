@@ -11,6 +11,8 @@ together with this PCB and an ESP32-C6 it makes a very potent Access Point for t
 
 <img width="600" alt="PCB_Yellow_AP" src="PCB_Yellow_AP.jpg">
 
+<img width="600" alt="Parts_Yellow_AP" src="Parts_Yellow_AP.jpg">
+
 
 
 Gerber of the PCB can be found in this folder
