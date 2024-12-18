@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightBurnProject AppVersion="1.3.01" FormatVersion="1" MaterialHeight="0" MirrorX="False" MirrorY="False">
+    <VariableText>
+        <Start Value="0"/>
+        <End Value="999"/>
+        <Current Value="0"/>
+        <Increment Value="1"/>
+        <AutoAdvance Value="0"/>
+    </VariableText>
+    <UIPrefs>
+        <Optimize_ByLayer Value="0"/>
+        <Optimize_ByGroup Value="-1"/>
+        <Optimize_ByPriority Value="1"/>
+        <Optimize_WhichDirection Value="0"/>
+        <Optimize_InnerToOuter Value="1"/>
+        <Optimize_ByDirection Value="0"/>
+        <Optimize_ReduceTravel Value="1"/>
+        <Optimize_HideBacklash Value="0"/>
+        <Optimize_ReduceDirChanges Value="0"/>
+        <Optimize_ChooseCorners Value="0"/>
+        <Optimize_AllowReverse Value="1"/>
+        <Optimize_RemoveOverlaps Value="0"/>
+        <Optimize_OptimalEntryPoint Value="1"/>
+        <Optimize_OverlapDist Value="0.025"/>
+    </UIPrefs>
+    <CutSetting type="Cut">
+        <index Value="0"/>
+        <name Value="Cut"/>
+        <maxPower Value="85"/>
+        <maxPower2 Value="20"/>
+        <speed Value="6.66667"/>
+        <priority Value="1"/>
+        <manualTabs Value="0"/>
+        <tabCount Value="2"/>
+        <tabCountMax Value="1"/>
+        <skipInnerTabs Value="1"/>
+        <tabsUseSpacing Value="0"/>
+    </CutSetting>
+    <CutSetting type="Tool">
+        <index Value="31"/>
+        <name Value="T2"/>
+        <priority Value="0"/>
+    </CutSetting>
+    <Shape Type="Rect" CutIndex="31" W="200" H="100" Cr="0">
+        <XForm>1 0 0 1 100 50</XForm>
+    </Shape>
+    <Shape Type="Group">
+        <XForm>-1 3.25841e-07 -3.25841e-07 -1 56.8415 113.043</XForm>
+        <Children>
+            <Shape Type="Ellipse" CutIndex="0" Rx="1.6" Ry="1.6">
+                <XForm>1 0 0 1 -15.1585 105.043</XForm>
+            </Shape>
+            <Shape Type="Ellipse" CutIndex="0" Rx="1.6" Ry="1.6">
+                <XForm>1 0 0 1 -15.1585 51.0429</XForm>
+            </Shape>
+            <Shape Type="Ellipse" CutIndex="0" Rx="1.6" Ry="1.6">
+                <XForm>1 0 0 1 48.8415 105.043</XForm>
+            </Shape>
+            <Shape Type="Ellipse" CutIndex="0" Rx="1.6" Ry="1.6">
+                <XForm>1 0 0 1 48.8415 51.0429</XForm>
+            </Shape>
+            <Shape Type="Path" CutIndex="0" VertID="1" PrimID="1">
+                <XForm>1 0 0 1 16.8415 68.0429</XForm>
+                <VertList>V12.5 16.19809c0x12.5c0y16.474232c1x1V12 16.69809c0x1c1x12.276142c1y16.69809V-12 16.69809c0x-12.276142c0y16.69809c1x1V-12.5 16.19809c0x1c1x-12.5c1y16.474232V-12.5 15.698091c0x-12.5c0y15.421948c1x1V-13 15.198091c0x1c1x-12.723858c1y15.198091V-23.250095 15.198091c0x-23.80238c0y15.198091c1x1V-24.250095 14.198091c0x1c1x-24.250095c1y14.750376V-24.250095 -14.4c0x-24.250095c0y-14.952285c1x1V-23.250095 -15.4c0x1c1x-23.80238c1y-15.4V-13 -15.4c0x-12.723858c0y-15.4c1x1V-12.5 -15.9c0x1c1x-12.5c1y-15.623857V-12.5 -16.4c0x-12.5c0y-16.676142c1x1V-12 -16.9c0x1c1x-12.276142c1y-16.9V12 -16.9c0x12.276142c0y-16.9c1x1V12.5 -16.4c0x1c1x12.5c1y-16.676142V12.5 -15.9c0x12.5c0y-15.623857c1x1V13 -15.4c0x1c1x12.723858c1y-15.4V23.251122 -15.4c0x23.803406c0y-15.4c1x1V24.251122 -14.4c0x1c1x24.251122c1y-14.952284V24.251122 14.198091c0x24.251122c0y14.750376c1x1V23.251122 15.198091c0x1c1x23.803406c1y15.198091V13 15.198091c0x12.723858c0y15.198091c1x1V12.5 15.698091c0x1c1x12.5c1y15.421948</VertList>
+                <PrimList>B0 1L1 2B2 3L3 4B4 5L5 6B6 7L7 8B8 9L9 10B10 11L11 12B12 13L13 14B14 15L15 16B16 17L17 18B18 19L19 20B20 21L21 22B22 23L23 0</PrimList>
+            </Shape>
+            <Shape Type="Path" CutIndex="0" VertID="0" PrimID="0">
+                <XForm>1 0 0 1 16.8415 68.0429</XForm>
+                <VertList>V37 41c0x37c0y41.552284c1x1V36 42c0x1c1x36.552284c1y42V-36 42c0x-36.552284c0y42c1x1V-37 41c0x1c1x-37c1y41.552284V-37 -21c0x-37c0y-21.552284c1x1V-36 -22c0x1c1x-36.552284c1y-22V36 -22c0x36.552284c0y-22c1x1V37 -21c0x1c1x37c1y-21.552284</VertList>
+                <PrimList>B0 1L1 2B2 3L3 4B4 5L5 6B6 7L7 0</PrimList>
+            </Shape>
+        </Children>
+    </Shape>
+    <Notes ShowOnLoad="0" Notes=""/>
+</LightBurnProject>
