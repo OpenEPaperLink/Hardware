@@ -51,7 +51,7 @@ GRID_LAYOUT = [
     "TWOSIXTHREE", # 5 TWO SIX THREE
     "FOURFIVESEV", # 6 FOUR FIVE SEVEN (Abbreviated)
     "EIGHTNINEAM", # 7 EIGHT NINE AM
-    "PMTWELVEXTN", # 8 PM TWELVE X TEN (Filler)
+    "PMTWELVETEN", # 8 PM TWELVE X TEN (Filler)
     "OCLOCKYTIME"  # 9 OCLOCK Y TIME (Filler)
 ]
 
@@ -85,7 +85,7 @@ WORD_POSITIONS = {
     "SEVEN_H": [(6, 8, 10)], # "SEV"
     "EIGHT_H": [(7, 0, 4)],
     "NINE_H": [(7, 5, 8)],
-    "TEN_H": [(0, 6, 8)],    # "TEN" for hours (shares with TEN_M)
+    "TEN_H": [(8, 8, 10)],    # "TEN" for hours (shares with TEN_M)
     "ELEVEN_H": [(4, 5, 10)],
     "TWELVE_H": [(8, 2, 7)],
 
@@ -177,7 +177,7 @@ def get_active_words(hour, minute, hour_words_map):
     # Add "PAST" or "TO" (except for O'Clock and Half Past)
     if 0 < minute_precise < 35:
         # Add "PAST" unless it's exactly half past (handled by "HALF" key alone)
-        if minute_precise not in range(30, 35) and minute_precise not in range(0, 5):
+        if minute_precise not in range(0, 5):
             temp_keys.append("PAST")
     elif minute_precise >= 35:
         temp_keys.append("TO")
