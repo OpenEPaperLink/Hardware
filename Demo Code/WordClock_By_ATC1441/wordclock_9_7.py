@@ -13,6 +13,7 @@ import os
 import requests
 import io
 import sys  # Required for exit()
+import re # For sanitizing filenames
 
 # --- Global Configuration ---
 DISPLAY_WIDTH = 960
@@ -176,7 +177,7 @@ def get_active_words(hour, minute, hour_words_map):
     # Add "PAST" or "TO" (except for O'Clock and Half Past)
     if 0 < minute_precise < 35:
         # Add "PAST" unless it's exactly half past (handled by "HALF" key alone)
-        if minute_precise not in range(30, 35):
+        if minute_precise not in range(30, 35) and minute_precise not in range(0, 5):
             temp_keys.append("PAST")
     elif minute_precise >= 35:
         temp_keys.append("TO")
@@ -542,6 +543,85 @@ def send_image_to_server(image_obj, ap_ip, mac_address, dither_val):
     finally:
         # Clean up the temporary file if it exists
         print("Nothing to do here")
+
+# =============================================================================
+# TEST EXECUTION BLOCK
+# =============================================================================
+#if __name__ == "__main__":
+#    print("--- Word Clock Combination Tester ---")
+#
+#    # --- Test Setup ---
+#    OUTPUT_DIR = "word_clock_test_images"
+#    # Ensure output directory exists
+#    os.makedirs(OUTPUT_DIR, exist_ok=True)
+#    print(f"Output images will be saved to: {OUTPUT_DIR}")
+#
+#    # Find the font once
+#    find_font()
+#
+#    # Keep track of unique combinations found (using frozenset for hashability)
+#    # Store the first time (HHMM) the combination was generated
+#    unique_combinations = {}
+#    combination_counter = 0
+#
+#    print("\nIterating through all hours (0-23) and minutes (0-59)...")
+#
+#    start_time = time.time()
+#
+#    # Loop through every possible minute of a day
+#    for hour in range(24):
+#        for minute in range(60):
+#            # 1. Get the active words for this specific time
+#            active_keys = get_active_words(hour, minute, HOUR_WORDS)
+#
+#            # 2. Create a unique, order-independent representation of the keys
+#            #    We use a frozenset of the sorted keys.
+#            combination_id = frozenset(sorted(active_keys))
+#
+#            # 3. Check if we've seen this combination before
+#            if combination_id not in unique_combinations:
+#                combination_counter += 1
+#                first_time_str = f"{hour:02d}{minute:02d}"
+#                unique_combinations[combination_id] = first_time_str # Store the first time it occurred
+#
+#                print(f"\n#{combination_counter}: Found new unique combination for time {first_time_str}")
+#                print(f"   Active Keys: {sorted(active_keys)}")
+#
+#                # 4. Generate the image for this unique combination
+#                clock_image = draw_word_clock(
+#                    DISPLAY_WIDTH, DISPLAY_HEIGHT, active_keys,
+#                    GRID_LAYOUT, WORD_POSITIONS
+#                )
+#
+#                # 5. Create a filename
+#                #    Includes counter, first time, and sanitized key list
+#                keys_str_part = "_".join(sorted(active_keys))
+#                # Sanitize keys_str_part for filename (remove invalid chars)
+#                sanitized_keys_str = re.sub(r'[\\/*?:"<>|]', "", keys_str_part)
+#                sanitized_keys_str = sanitized_keys_str[:80] # Limit length
+#
+#                # Format: 001_HHMM_KEY1_KEY2... .png
+#                filename = f"{combination_counter:03d}_{first_time_str}_{sanitized_keys_str}.png"
+#                filepath = os.path.join(OUTPUT_DIR, filename)
+#
+#                # 6. Save the image (use PNG for lossless quality)
+#                try:
+#                    clock_image.save(filepath, 'PNG')
+#                    print(f"   -> Saved: {filepath}")
+#                except Exception as e:
+#                    print(f"   ERROR: Failed to save image {filepath}: {e}")
+#
+#    end_time = time.time()
+#    duration = end_time - start_time
+#
+#    print("\n--- Testing Complete ---")
+#    print(f"Total unique word combinations found: {len(unique_combinations)}")
+#    print(f"Total time taken: {duration:.2f} seconds")
+#    print(f"Images saved in: {os.path.abspath(OUTPUT_DIR)}")
+
+
+
+
 
 # =============================================================================
 # MAIN EXECUTION BLOCK
