@@ -7,7 +7,7 @@ together with this PCB and an ESP32-C6 it makes a very potent Access Point for t
 
 <img width="600" alt="Complete_Yellow_AP" src="Complete_Yellow_AP.jpg">
 
-<img width="600" alt="Seperate_Yelow_AP" src="Seperate_Yelow_AP.jpg">
+<img width="600" alt="Seperate_Yelow_AP" src="Seperate_Yellow_AP.jpg">
 
 <img width="600" alt="PCB_Yellow_AP" src="PCB_Yellow_AP.jpg">
 
